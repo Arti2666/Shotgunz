@@ -1,0 +1,70 @@
+.alexis-main-container-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.alexis-signup-form-container {
+  background: #f12711;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f5af19, #f12711);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  height: 500px;
+  width: 350px;
+  border-radius: 20px;
+
+  h2 {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-actions input {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 20px;
+    margin-bottom: 5px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .form-actions input:hover {
+    background-color: white;
+    color: black;
+  }
+
+}
+
+.alexis-signup-form-container .form-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.alexis-signup-bonus-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+  }
+
+  a:hover {
+    border-bottom: 1px solid white;
+  }
+}
