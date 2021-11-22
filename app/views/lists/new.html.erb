@@ -1,0 +1,9 @@
+<h1>Create a new List</h1>
+
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :places, as: :numeric %>
+  <%= f.input :category, collection: List::CATEGORY %>
+  <%= f.submit %>
+<% end %>
