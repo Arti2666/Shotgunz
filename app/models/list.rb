@@ -3,5 +3,5 @@ class List < ApplicationRecord
   has_many :shotguns
   has_many :listed_users, through: :shotguns, source: :user
 
-  CATEGORY = ["coffee", "object", "technology"]
+  CATEGORY = ["Sports ⚽️", "Game 🃏", "Promo 💥", "Party 🥳", "Product 🚀", "Holiday 😎", "Food 🍕", "Other 👥"]
 end
