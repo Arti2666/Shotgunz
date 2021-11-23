@@ -10,4 +10,6 @@ class List < ApplicationRecord
   def belongs_to_user?(user)
     listed_users.any? { |listed_user| listed_user.id == user.id }
   end
+  
+  CATEGORY = ["Sports ⚽️", "Game 🃏", "Promo 💥", "Party 🥳", "Product 🚀", "Holiday 😎", "Food 🍕", "Other 👥"]
 end

@@ -1,9 +1,33 @@
-<h1>Create a new List</h1>
+<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :places, as: :numeric %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+<div class="row py-5 px-4">
+  <div class="col-md-5 mx-auto w-80">
+    <div class="card-container">
+      <div class="form-card">
+        <div class="title mb-5">
+          <h1>Create a new List</h1>
+        </div>
+          <%= simple_form_for(@list) do |f| %>
+            <%= f.input :name, label: "List name 📋"%>
+            <%= f.input :description, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
+
+            <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
+            <%# f.input :autobook, as: :boolean %>
+            <div id="DateBoxes">
+              <%= f.text_field :start_time, placeholder: "Opens", input_html: { id: "range_start" }, data: {
+                  controller: "flatpickr",
+                  altInput: true,
+                  flatpickr_enable_time: true,
+                  flatpickr_mode: 'range',
+                  flatpickr_date_format: "Y-m-d H:i",
+                  flatpickr_min_Date: "today",
+                } %>
+              <%= f.text_field :end_time, input_html: { id: "range_end" }, placeholder: "Closes", id: 'secondRangeInput' %>
+            </div>
+            <%= f.input :category, collection: List::CATEGORY %>
+            <%= f.submit %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
