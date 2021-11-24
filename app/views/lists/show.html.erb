@@ -1,7 +1,7 @@
 <h1>List name: <%= @list.name %></h1>
 <p>Description: <%= @list.description %></p>
 <p>created by: <%= @list.user.email %></p>
-<p>Shotgunerz :</p>
+<p>Shotgunnerz :</p>
 <% @list.listed_users.each do |user| %>
   <%= user.username == nil ? user.email : user.username %>
 <% end %>

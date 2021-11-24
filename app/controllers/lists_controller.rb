@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.all.active
   end
 
   def show
@@ -25,7 +25,6 @@ class ListsController < ApplicationController
     else
       render :new
     end
-    raise
   end
 
   def destroy
