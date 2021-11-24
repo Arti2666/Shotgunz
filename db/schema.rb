@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_163908) do
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "places"
     t.boolean "public", default: false
     t.string "category"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_163908) do
   end
 
   create_table "shotguns", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
