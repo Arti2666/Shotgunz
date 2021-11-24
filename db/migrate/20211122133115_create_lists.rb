@@ -2,7 +2,7 @@ class CreateLists < ActiveRecord::Migration[6.0]
   def change
     create_table :lists do |t|
       t.string :name
-      t.string :description
+      t.text :description
       t.integer :places
       t.boolean :public, default: false
       t.string :category

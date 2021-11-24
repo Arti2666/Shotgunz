@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_163908) do
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "places"
     t.boolean "public", default: false
     t.string "category"
