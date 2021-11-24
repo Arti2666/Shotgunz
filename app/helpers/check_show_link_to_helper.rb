@@ -5,9 +5,9 @@ module CheckShowLinkToHelper
     else
       if @list.belongs_to_user?(current_user)
         # Bouton delete my shotgunz à implanter
-        "ok"
+        link_to "Delete my shotgun", list_shotgun_path(@list.id), method: :delete
       else
-        link_to "shotgunz !", list_shotguns_path(@list.id), method: :post
+        link_to "shotgun !", list_shotguns_path(@list.id), method: :post
       end
     end
   end

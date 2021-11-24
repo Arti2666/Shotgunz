@@ -10,4 +10,11 @@ class ShotgunsController < ApplicationController
       render "lists/show"
     end
   end
+
+  def destroy
+    @shotgun = Shotgun.find(params[:id])
+    if @shotgun.destroy
+      redirect_to lists_path
+    end
+  end
 end
