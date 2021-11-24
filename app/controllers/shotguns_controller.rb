@@ -1,11 +1,18 @@
 class ShotgunsController < ApplicationController
+  before_action :authenticate_user!, except: :create
+
   def create
     @shotgun = Shotgun.new
-    @shotgun.user_id = current_user.id
+    @shotgun.user = (current_user ? current_user : nil)
     @list = List.find(params[:list_id])
-    @shotgun.list_id = @list.id
+    @shotgun.list = @list
     if @shotgun.save
-      redirect_to root_path
+      session[:shotgun_id] = @shotgun.id
+      if @shotgun.user_id.nil?
+        redirect_to new_user_registration_path
+      else
+        redirect_to root_path
+      end
     else
       render "lists/show"
     end
