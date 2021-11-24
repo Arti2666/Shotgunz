@@ -1,0 +1,155 @@
+.alexis-marketplace-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #B000B9, #FD7B7B);
+  height: 91vh;
+}
+
+.alexis-marketplace-second {
+  height: 100%;
+  width: 80%;
+}
+
+// LINK GENERAL
+
+.alexis-click {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+// MENU
+
+.alexis-marketplace-menu {
+  display: flex;
+
+  .marketplace-menu-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+
+    p {
+      margin: 0;
+      color: white;
+    }
+  }
+}
+
+// LISTS CONTAINER
+
+.alexis-marketplace-lists-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+  height: 74.5vh;
+}
+// CARD
+
+.alexis-marketplace-card {
+  position: relative;
+  height: 100px;
+  width: 332px;
+  margin: 15px;
+  border-radius: 12px;
+  background: linear-gradient(to right,#010234, #3F1964);
+
+  .alexis-marketplace-card-element {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  // LEFT ELEMENT
+
+  .alexis-card-left-element {
+    color: white;
+    p {
+      margin: 0;
+      font-family: 'Gilroy-Medium';
+      font-size: 0.7rem;
+    }
+
+    .alexis-user-email {
+      font-size: 0.80rem;
+    }
+  }
+
+  // RIGHT ELEMENT
+
+  .alexis-card-right-element {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    p {
+      margin: 0;
+      font-family: 'Gilroy-Medium';
+      font-size: 0.7rem;
+    }
+
+    .alexis-card-show-btn {
+      background-color: #B000B9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      width: 36px;
+      border-radius: 12px;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        font-weight: 400;
+        font-size: 1.25rem;
+      }
+    }
+
+  }
+}
+
+.alexis-marketplace-container-create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+
+  .alexis-marketplace-create-btn {
+    background-color: #B000B9;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .alexis-marketplace-create-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 39px 7px rgba(255px, 86px, 242px, 0.8);
+  }
+}

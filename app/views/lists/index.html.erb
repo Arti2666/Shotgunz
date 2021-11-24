@@ -1,8 +1,43 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<div class="alexis-marketplace-main">
+  <div class="alexis-marketplace-second">
+    <div class="alexis-marketplace-menu">
+        <div class="marketplace-menu-element">
+          <p>Public</p>
+        </div>
+        <div class="marketplace-menu-element">
+          <p>Private</p>
+        </div>
+        <div class="marketplace-menu-element">
+          <p>My shotgun</p>
+        </div>
+      </div>
 
-<% @lists.each do |list|%>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
-
-<%= link_to "create a new list", new_list_path %>
+    <div class="alexis-marketplace-lists-container">
+      <% @lists.each do |list|%>
+        <div class="alexis-marketplace-card">
+          <div class="alexis-marketplace-card-element">
+            <%= link_to "", list_path(list), class:"alexis-click"%>
+            <div class="alexis-card-left-element">
+              <%= link_to list.name, list_path(list) %>
+              <p>4 shotguns left out of 15</p>
+              <%= list.user.email %>
+            </div>
+            <div class="alexis-card-right-element">
+              <p>8 minutes ago</p>
+              <div class="alexis-card-show-btn">
+                <i class="fas fa-chevron-right"><%= link_to "", list_path(list), class:"alexis-market-show-btn" %></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="alexis-marketplace-container-create-btn">
+      <div class="alexis-marketplace-create-btn">
+        <%= link_to new_list_path do %>
+          <i class="fas fa-plus"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
