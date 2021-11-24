@@ -8,8 +8,8 @@ class List < ApplicationRecord
   validates :places, presence: true
 
   def belongs_to_user?(user)
-    listed_users.any? { |listed_user| listed_user.id == user.id }
+    listed_users.include? user
   end
-  
+
   CATEGORY = ["Sports ⚽️", "Game 🃏", "Promo 💥", "Party 🥳", "Product 🚀", "Holiday 😎", "Food 🍕", "Other 👥"]
 end
