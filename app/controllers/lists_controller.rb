@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.all.active
   end
 
   def show
