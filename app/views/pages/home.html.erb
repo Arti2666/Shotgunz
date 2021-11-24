@@ -1,4 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "View all lists", lists_path %>
+
+<div class="home-main-container">
+  <div class="home-body-container">
+    <div class="home-title">
+      <h1>ONE SHOT,
+      <br>
+       ONE OPPORTUNITY.</h1>
+    </div>
+    <div class="home-text">
+      <p>It’s simple, first come first served. When a user creates a shotgun list, he specifies how many people can qualify. The first ones to shotgun qualify, the rest go to the waiting list.</p>
+    </div>
+    <%= link_to lists_path do %>
+      <div class="give-it-a-shot-cta">
+        <div class="cta-text">GIVE IT A SHOT</div>
+        <div class="cta-btn">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+     <% end %>
+    <div class="home-title">
+      <h1>WHAT FOR?</h1>
+    </div>
+    <div class="home-text">
+      <p>Anything you want! We’ve designed it so that you can use for any type of event that requires tracking of interested users. We can’t wait to see what uses you’ll find for it!</p>
+    </div>
+    <%= link_to lists_path do %>
+      <div class="shotgun-cta">
+        <h3>Shotgun</h3>
+      </div>
+    <% end %>
+  </div>
+</div>
