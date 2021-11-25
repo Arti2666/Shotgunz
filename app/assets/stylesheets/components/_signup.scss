@@ -3,21 +3,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  margin: 2rem;
 }
 
 .alexis-signup-form-container {
-  background: #f12711;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f5af19, #f12711);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(to right, #010234, #3F1964);
   color: white;
-  height: 560px;
-  width: 350px;
   border-radius: 20px;
+  padding: 20px 80px;
 
   h2 {
     text-align: center;
