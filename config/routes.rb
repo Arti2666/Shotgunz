@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   get 'lists/index'
-  devise_for :users, controllers: {registrations: "registrations"}
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   resources :lists, only: %I[index show new create destroy] do
     resources :shotguns, only: %I[create destroy]

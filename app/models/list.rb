@@ -9,7 +9,6 @@ class List < ApplicationRecord
   validates :description, presence: true
   validates :places, presence: true
 
-  # scope :active, (Date.now.strftime("%Y-%m-%d %T")) {WHERE ("? > START_TIME AND ? < END_TIME", Date.now.strftime("%Y-%m-%d %T")) }
   scope :active, -> { where("start_time < ? AND end_time > ?", DateTime.now, DateTime.now) }
 
   def belongs_to_user?(user)
