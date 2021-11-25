@@ -28,8 +28,9 @@ user7 = { username: "Alex", email: "alex@Kanto.com", password: "123456" }
 user8 = { username: "Kevin", email: "kevin@Kanto.com", password: "123456" }
 user9 = { username: "Clement", email: "clement@Kanto.com", password: "123456" }
 user10 = { username: "Valou", email: "valou@Kanto.com", password: "123456" }
+user11 = { username: "External Guest", email: "guest@Kanto.com", password: "123456" }
 
-[user1, user2, user3, user4, user5, user6, user7, user8, user9, user10].each do |attributes|
+[user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11].each do |attributes|
   user = User.create!(attributes)
   puts "Created #{user.username}"
 end
