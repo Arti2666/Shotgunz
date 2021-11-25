@@ -1,3 +1,4 @@
+// NAVBAR LE WAGON
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -10,4 +11,62 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+//NAVBAR CONTAINER
+.tanki-navbar {
+  height: 9vh;
+  width: 95% ;
+  margin: 0 auto;
+}
+
+.tanki-navbar-container {
+  // background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+//BURGER MENU
+
+.tanki-burger-menu-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tanki-burger-menu-white-square {
+  background-color: white;
+  border-radius: 10px;
+  width: 43px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fas.fa-bars {
+    color: #B80DB3;
+  }
+}
+
+//SHOTGUN LOGO NAVBAR
+
+.shotgun-logo-navbar {
+  // background-color: red;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shotgun-logo-navbar h3 {
+  margin-bottom: 0;
+  font-family: 'Gilroy-HeavyItalic';
+  font-size: 35px;
+  color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: white;
+  margin-top: 3px;
 }
