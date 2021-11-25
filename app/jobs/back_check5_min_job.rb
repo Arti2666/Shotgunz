@@ -3,7 +3,7 @@ class BackCheck5MinJob < ApplicationJob
 
   def perform(shotgun_id)
     @shotgun = Shotgun.find(shotgun_id)
-    if @shotgun.user == User.find_by(username: "Guest")
+    if @shotgun.user.nil?
       @shotgun.destroy
     end
   end
