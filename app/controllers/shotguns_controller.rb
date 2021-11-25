@@ -3,13 +3,13 @@ class ShotgunsController < ApplicationController
 
   def create
     @shotgun = Shotgun.new
-    @shotgun.user = (current_user ? current_user : User.find_by(username: "External Guest"))
+    @shotgun.user = (current_user ? current_user : nil)
     @list = List.find(params[:list_id])
     @shotgun.list = @list
     if @shotgun.save
       session[:shotgun_id] = @shotgun.id
       if @shotgun.user_id.nil?
-        BackCheck5MinJob.set(wait_until: 30.seconds.from_now).perform_later(@shotgun.id)
+        BackCheck5MinJob.set(wait_until: 2.minutes.from_now).perform_later(@shotgun.id)
         flash[:notice] = "Countdown has started ⏱😈"
         redirect_to new_user_registration_path
       else
