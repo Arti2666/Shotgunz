@@ -3,6 +3,7 @@
 <p>created by: <%= @list.user.email %></p>
 <p>Shotgunnerz :</p>
 <% @list.listed_users.each do |user| %>
-  <%= user.username == nil ? user.email : user.username %>
+  <%=  user.username == nil ? user.email : user.username %>
 <% end %>
+<%= @list.shotguns.count %>
 <%= check_show %>

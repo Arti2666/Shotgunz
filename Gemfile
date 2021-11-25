@@ -7,7 +7,9 @@ ruby '2.7.4'
 # yarn add flatpickr
 # yarn add stimulus-flatpickr
 
-
+# Sidekiq background job
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'

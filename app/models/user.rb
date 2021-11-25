@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :lists
   has_many :shotguns
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 10 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 14 }
 end
