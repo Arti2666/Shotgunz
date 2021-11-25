@@ -1,0 +1,124 @@
+
+// LIST SHOW SCOPING
+.list-show {
+
+  // CARD CONTAINER
+  .card-container {
+    background: linear-gradient(to right, #010234, #3F1964);
+    border-radius: 12px;
+    height: auto;
+    width: 85%;
+  }
+
+  .card-container-flexbox {
+    height: 100%;
+    width: 85%;
+  }
+
+  // CARD TITLE
+  .card-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: blue;
+    height: auto;
+    color: white;
+  }
+
+  .card-title.h1 {
+    font-size: 30px;
+    font-family: 'Gilroy-Heavy';
+  }
+
+  // CARD CREATOR CONTAINER
+  .card-creator-container {
+    background-color: yellow;
+    margin-bottom: 10px;
+  }
+
+  .card-creator-img {
+    background-color: green;
+  }
+
+  .card-creator-name{
+    background-color: green;
+    color: white;
+  }
+
+  .card-creation-time {
+    background-color: green;
+    color: white;
+  }
+
+  // CARD DESCRIPTION
+  .card-description {
+    background-color: red;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .card-description p {
+    color: white;
+    font-size: 14px;
+    font-family: 'Gilroy-Medium';
+  }
+
+  .card-description p span {
+    color: white;
+    font-size: 14px;
+    font-family: 'Gilroy-Bold';
+  }
+
+
+  // SHOTGUNERS CONTAINER
+  .shotgunners-containers {
+    background-color: purple;
+    margin-bottom: 10px;
+  }
+
+  .shotgunners-title {
+    background-color: orange;
+    color: white;
+  }
+
+  .shotgunners-left {
+    background-color: orange;
+    color: white;
+  }
+
+  // SHOTGUNERS CARD LIST
+  .shotgunners-list {
+    background-color: blue;
+    margin-bottom: 10px;
+  }
+
+  // SHARING LINK CONTAINER
+  .sharing-link-container {
+    background-color: yellowgreen;
+    margin-bottom: 10px;
+  }
+
+  .sharing-link-tagline {
+    background-color: pink;
+    height: auto;
+  }
+
+  .sharing-link-tagline p{
+    color: white;
+    font-size: 15px;
+    font-family: 'Gilroy-Heavy';
+  }
+
+  .sharing-link-logo {
+    background-color: #A002AD;
+    width: 27px;
+    height: 23px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .sharing-link-logo.fas.fa-link {
+    color: white;
+  }
+
+
+}
