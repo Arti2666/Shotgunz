@@ -9,10 +9,9 @@
         </div>
           <%= simple_form_for(@list) do |f| %>
             <%= f.input :name, label: "List name 📋"%>
-            <%= f.input :description, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
-
+            <%= f.input :description, as: :text, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
             <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
-            <%# f.input :autobook, as: :boolean %>
+            <%= f.input :prebookspot, as: :boolean %>
             <div id="DateBoxes">
               <%= f.text_field :start_time, placeholder: "Opens", input_html: { id: "range_start" }, data: {
                   controller: "flatpickr",

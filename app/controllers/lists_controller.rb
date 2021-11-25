@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!, except: :show
+
   def index
-    @lists = List.all
+    @lists = List.all.active
   end
 
   def show
@@ -15,6 +17,12 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = current_user.id
     if @list.save
+      if @list.prebookspot
+        @shotgun = Shotgun.new
+        @shotgun.user_id = current_user.id
+        @shotgun.list_id = @list.id
+        @shotgun.save
+      end
       redirect_to lists_path
     else
       render :new
@@ -31,6 +39,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :description, :places, :category, :start_time, :end_time)
+    params.require(:list).permit(:name, :description, :places, :category, :start_time, :end_time, :prebookspot)
   end
 end
