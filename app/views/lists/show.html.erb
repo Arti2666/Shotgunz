@@ -4,8 +4,15 @@
 <p>Available spots: <%= @list.places %></p>
 <p>Shotguns: <%= @list.shotguns.count %> </p>
 <p>Shotgunnerz :</p>
-<% @list.shotguns.each do |shotgun| %>
-    <%=  shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %>
-<% end %>
-
-<%= check_show %>
+<ol>
+  <% @list.shotguns.each do |shotgun| %>
+     <li><%=  shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></li>
+  <% end %>
+</ol>
+<%# affiche shotgun || delete shotgun %>
+<%= check_shotgun_btn %>
+<%# btn delete si createur de la liste %>
+<%= check_delete_btn %>
+<p>now:<%= Time.now %></p>
+<p>end_time<%= @list.end_time %></p>
+<p><%= (@list.end_time - Time.now).round / 60 %></p>
