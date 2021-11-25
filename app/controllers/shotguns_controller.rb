@@ -19,7 +19,7 @@ class ShotgunsController < ApplicationController
   end
 
   def destroy
-    @shotgun = Shotgun.find(params[:id])
+    @shotgun = Shotgun.find_by('user_id= ? AND list_id= ?', current_user.id, params[:id])
     if @shotgun.destroy
       redirect_to lists_path
     end
