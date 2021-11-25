@@ -3,13 +3,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(to bottom, #B000B9, #FD7B7B);
   height: 91vh;
 }
 
 .alexis-marketplace-second {
   height: 100%;
-  width: 80%;
+  width: 90%;
 }
 
 // LINK GENERAL
@@ -32,6 +31,8 @@
     margin: 10px;
 
     p {
+      font-size: 0.8rem;
+      font-weight: bold;
       margin: 0;
       color: white;
     }
@@ -56,11 +57,13 @@
   margin: 15px;
   border-radius: 12px;
   background: linear-gradient(to right,#010234, #3F1964);
+  transition: 0.2s ease-in-out;
+
 
   .alexis-marketplace-card-element {
     display: flex;
     justify-content: space-between;
-    margin: 10px 20px;
+    padding: 10px 20px;
   }
 
   a {
@@ -122,6 +125,10 @@
     }
 
   }
+}
+
+.alexis-marketplace-card:hover {
+  transform: scale(1.05);
 }
 
 .alexis-marketplace-container-create-btn {

@@ -3,6 +3,10 @@
   font-family: 'Gilroy';
 }
 
+body {
+  background: linear-gradient(115deg, #BB11B0, #FD7B7B);
+}
+
 @font-face {
   font-family: 'Gilroy';
   src: url(Gilroy-UltraLightItalic.otf),
@@ -117,11 +121,11 @@ a {
   justify-content: center;
   align-items: center;
   margin-left: 10px;
+  .fas.fa-chevron-right {
+    color: #DC4596;
+  }
 }
 
-.fas.fa-chevron-right {
-  color: #DC4596;
-}
 
 //SHOTGUN CTA
 .shotgun-cta {
