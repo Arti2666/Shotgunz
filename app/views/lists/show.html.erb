@@ -1,11 +1,43 @@
-<h1>List name: <%= @list.name %></h1>
-<p>Description: <%= @list.description %></p>
-<p>created by: <%= @list.user.email %></p>
-<p>Available spots: <%= @list.places %></p>
-<p>Shotguns: <%= @list.shotguns.count %> </p>
-<p>Shotgunnerz :</p>
-<% @list.shotguns.each do |shotgun| %>
-    <%=  shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %>
-<% end %>
-
-<%= check_show %>
+<div class="list-show d-flex align-items-center justify-content-center flex-column">
+  <div class="card-container d-flex align-items-center justify-content-center flex-column">
+    <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
+      <div class="card-title">
+        <h1><%= @list.name %></h1>
+      </div>
+      <div class="card-creator-container d-flex align-content-start  flex-row">
+        <div class="card-creator-img"></div>
+        <div class="card-creator-name">
+          <p><%= @list.user.email %></p>
+        </div>
+        <div class="card-creation-time">8 minutes ago</div>
+      </div>
+      <div class="card-description">
+        <p><span>Description: </span><%= @list.description %></p>
+      </div>
+      <div class="shotgunners-containers d-flex align-content-start flex-column">
+        <div class="shotgunners-title"></div>
+        <div class="shotgunners-left">
+          <p> <%= @list.shotguns.count %> / <%= @list.places =>
+        </div>
+      </div>
+      <div class="shotgunners-list">
+        <% @list.shotguns.each do |shotgun| %>
+          <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %>
+        <% end %>
+      </div>
+      <div class="sharing-link-container d-flex align-items-center justify-content-center">
+        <div class="sharing-link-tagline">
+          <p>SHARE THE LINK</p>
+        </div>
+        <div class="sharing-link-logo d-flex align-items-center justify-content-center">
+          <i class="fas fa-link"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+    <%= link_to check_show do %>
+      <div class="shotgun-cta">
+        <h3>Shotgun</h3>
+      </div>
+    <% end %>
+</div>
