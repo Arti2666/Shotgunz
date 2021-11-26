@@ -1,68 +1,46 @@
 <div class="list-show d-flex align-items-center justify-content-center flex-column">
+  <div class="top-container d-flex align-items-center w-85 mb-3">
+    <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
+      <i class="fas fa-arrow-left"></i><%= link_to "Back to list", lists_path %>
+    </div>
+    <div class="delete-list-btn w-50 d-flex align-items-center justify-content-end">
+      <%= check_delete_btn %>
+    </div>
+  </div>
   <div class="card-container d-flex align-items-center justify-content-center flex-column">
     <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
       <div class="card-title">
         <h1><%= @list.name %></h1>
       </div>
-      <div class="card-creator-container d-flex align-content-start  flex-row">
-        <div class="card-creator-img"></div>
-        <div class="card-creator-name">
-          <p><%= @list.user.email %></p>
-        </div>
-        <div class="card-creation-time">8 minutes ago</div>
+      <div class="card-creator-name">
+        <p><span>Created by: </span><%= @list.user.email %></p>
+      </div>
+      <div class="card-creation-time">
+        <p>8 minutes ago</p>
       </div>
       <div class="card-description">
         <p><span>Description: </span><%= @list.description %></p>
       </div>
-      <div class="shotgunners-containers d-flex align-content-start flex-column">
-        <div class="shotgunners-title"></div>
-        <div class="shotgunners-left">
-          <p> <%= @list.shotguns.count %> / <%= @list.places %>
-        </div>
+      <div class="shotgunners-title">
+        <h2>Shotgunners</h2>
+      </div>
+      <div class="shotgunners-left">
+        <p><span><%= @list.shotguns.count %> shotguns</span> left out of <span><%= @list.places %></span></p>
       </div>
       <div class="shotgunners-list">
         <% @list.shotguns.each do |shotgun| %>
-          <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %>
+          <p><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
         <% end %>
       </div>
-      <div class="sharing-link-container d-flex align-items-center justify-content-center">
-        <div class="sharing-link-tagline">
-          <p>SHARE THE LINK</p>
+      <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
+        <div class="sharing-link-container d-flex align-items-center justify-content-center">
+          <div class="sharing-link-tagline">
+            <p>SHARE THE LINK</p>
+          </div>
+          <div class="sharing-link-logo d-flex align-items-center justify-content-center">
+            <i class="fas fa-link"></i>
+          </div>
         </div>
-        <div class="sharing-link-logo d-flex align-items-center justify-content-center">
-          <i class="fas fa-link"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div data-bs-toggle="modal" data-bs-target="#SuccessModal">
-    <%= check_shotgun_btn %>
-  </div>
-  <br>
-  <%= check_delete_btn %>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h1>Success! 🥳 </h1>
-        <% unless current_user %>
-          <h3>Your spot is reserved for the next 5 minutes.
-            Sign-up to confirm your spot!</h3>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <% if current_user %>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-        <% else %>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
-        <% end %>
       </div>
     </div>
   </div>

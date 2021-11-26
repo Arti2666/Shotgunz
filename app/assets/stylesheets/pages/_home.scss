@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 * {
-  font-family: 'Gilroy';
+  font-family: 'Gilroy-Medium';
 }
 
 body {
@@ -8,29 +8,7 @@ body {
   background-attachment: fixed;
 }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url(Gilroy-UltraLightItalic.otf),
-       url(Gilroy-UltraLight.otf),
-       url(Gilroy-ThinItalic.otf),
-       url(Gilroy-Thin.otf),
-       url(Gilroy-SemiboldItalic.otf),
-       url(Gilroy-Semibold.otf),
-       url(Gilroy-RegularItalic.otf),
-       url(Gilroy-Regular.otf),
-       url(Gilroy-MediumItalic.otf),
-       url(Gilroy-Medium.otf),
-       url(Gilroy-LightItalic.otf),
-       url(Gilroy-Light.otf),
-       url(Gilroy-HeavyItalic.otf),
-       url(Gilroy-Heavy.otf),
-       url(Gilroy-Extrabold.otf),
-       url(Gilroy-BoldItalic.otf),
-       url(Gilroy-Bold.otf),
-       url(Gilroy-BlackItalic.otf),
-       url(Gilroy-Black.otf),
-       url(Gilroy-ExtraboldItalic.otf);
-}
+
 
 
 a {
