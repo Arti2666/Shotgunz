@@ -17,12 +17,12 @@
       <div class="shotgunners-containers d-flex align-content-start flex-column">
         <div class="shotgunners-title"></div>
         <div class="shotgunners-left">
-          <%= @list.shotguns.count %>
+          <p> <%= @list.shotguns.count %> / <%= @list.places =>
         </div>
       </div>
       <div class="shotgunners-list">
-        <% @list.listed_users.each do |user| %>
-          <%= user.username == nil ? user.email : user.username %>
+        <% @list.shotguns.each do |shotgun| %>
+          <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %>
         <% end %>
       </div>
       <div class="sharing-link-container d-flex align-items-center justify-content-center">

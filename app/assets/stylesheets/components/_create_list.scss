@@ -1,14 +1,18 @@
 .alexis-create-form-main-container {
-  height: 91vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: 2rem;
 }
 
 .alexis-create-form-card {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to right, #010234, #3F1964);
   border-radius: 20px;
   padding: 20px 80px;
+  width: 60%;
 
   h1 {
     color: white;
@@ -20,8 +24,12 @@
 
   label {
     color: white;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.2rem;
+  }
+
+  .places {
+    width: 50px;
   }
 }
 
@@ -31,6 +39,15 @@
     font-size: 1.2rem;
     font-weight: 800;
     margin: 0;
+  }
+
+  .datesetup {
+    display: flex;
+    flex-direction: row;
+
+    .start-time {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -57,4 +74,87 @@
 
 #list_description {
   height: 80px;
+}
+
+// RESPONSIVE
+
+@media screen and (max-width: 580px) {
+  .alexis-create-form-card {
+    padding: 20px 40px;
+    width: 100%;
+
+    h1 {
+      font-size: large;
+    }
+
+    label {
+      font-size: 0.8rem;
+    }
+
+    #list_description {
+      height: 50px;
+    }
+
+    #DateBoxes {
+      display: flex;
+      flex-direction: column;
+
+      .datesetup {
+        display: flex;
+
+        input {
+          width: 100px;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-height: 580px) {
+
+  .alexis-create-form-card {
+    width: 100%;
+
+    h1 {
+      font-size: medium;
+    }
+
+    label {
+      font-size: 1rem;
+    }
+
+    .create-form-element {
+      input {
+        height: 20px;
+      }
+    }
+
+    select {
+      height: 30px;
+    }
+
+    #list_description {
+      height: 20px;
+    }
+
+
+    #DateBoxes {
+      display: flex;
+      flex-direction: column;
+
+      .datesetup {
+        display: flex;
+
+        input {
+          width: 100px;
+        }
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+    }
+  }
 }
