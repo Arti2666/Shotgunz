@@ -17,7 +17,7 @@
       <div class="shotgunners-containers d-flex align-content-start flex-column">
         <div class="shotgunners-title"></div>
         <div class="shotgunners-left">
-          <p> <%= @list.shotguns.count %> / <%= @list.places =>
+          <p> <%= @list.shotguns.count %> / <%= @list.places %>
         </div>
       </div>
       <div class="shotgunners-list">
@@ -35,10 +35,7 @@
       </div>
     </div>
   </div>
-    <%= link_to check_shotgun_btn do %>
-      <div class="shotgun-cta">
-        <h3>Shotgun</h3>
-      </div>
-    <% end %>
+    <%= check_shotgun_btn %>
+      <br>
     <%= check_delete_btn %>
 </div>
