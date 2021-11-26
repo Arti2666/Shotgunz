@@ -12,3 +12,14 @@
     </button>
   </div>
 <% end %>
+<% if success_modal %>
+  <div class="alert alert-warning alert-dismissible fade show m-1 arti-alert" id="kill" role="alert">
+    <div class="Arti-success">
+      <h2>Success! 🥳</h2>
+      <br>
+      <pre><%= success_modal %></pre>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+<% end %>
