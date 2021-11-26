@@ -16,11 +16,16 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 
 @font-face {
-  font-family: "Gilroy Medium";
-  src: font-url('Gilroy-Medium.otf');
+  font-family: "Gilroy-Medium";
+  src: font-url('Gilroy-Medium.ttf');
 }
 
 @font-face {
-  font-family: "Gilroy Heavy";
-  src: font-url('Gilroy-Heavy.otf');
+  font-family: "Gilroy-Heavy";
+  src: font-url('Gilroy-Heavy.ttf');
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: font-url('Gilroy-Bold.ttf');
 }
