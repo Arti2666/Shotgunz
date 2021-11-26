@@ -10,9 +10,16 @@ class ShotgunsController < ApplicationController
       session[:shotgun_id] = @shotgun.id
       if @shotgun.user_id.nil?
         BackCheck5MinJob.set(wait_until: 2.minutes.from_now).perform_later(@shotgun.id)
-        flash[:notice] = "Countdown has started ⏱😈"
+        flash[:success_modal] = <<-TEXT
+Your spot is booked
+for the next 5 minutes!
+⏱😈
+Sign Up to confirm it!
+🚀
+        TEXT
         redirect_to new_user_registration_path
       else
+        flash[:success_modal] = "Another one bites the dust! 😎"
         redirect_to list_path(@shotgun.list_id)
       end
     else

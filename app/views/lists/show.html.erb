@@ -35,7 +35,35 @@
       </div>
     </div>
   </div>
+  <div data-bs-toggle="modal" data-bs-target="#SuccessModal">
     <%= check_shotgun_btn %>
-      <br>
-    <%= check_delete_btn %>
+  </div>
+  <br>
+  <%= check_delete_btn %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Success! 🥳 </h1>
+        <% unless current_user %>
+          <h3>Your spot is reserved for the next 5 minutes.
+            Sign-up to confirm your spot!</h3>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <% if current_user %>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+        <% else %>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
