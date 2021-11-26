@@ -1,31 +1,28 @@
+//BACK TO LIST AND DELETE CONTAINER
+.top-container {
+  max-width: 400px;
+  min-width: 300px;
+}
 
+.top-container .fas.fa-arrow-left {
+  color: white;
+  font-size: 15px;
+}
+
+.top-container a {
+  color: white;
+  font-size: 15px;
+  font-family: 'Gilroy-Medium';
+  margin-left: 10px;
+  width: auto;
+  margin-bottom: 0;
+}
 
 // LIST SHOW SCOPING
 .list-show {
   a {
   text-decoration: none;
   }
-
-  //BACK TO LIST AND DELETE CONTAINER
-  .top-container {
-    max-width: 400px;
-    min-width: 300px;
-  }
-
-  .top-container .fas.fa-arrow-left {
-    color: white;
-    font-size: 15px;
-  }
-
-  .top-container a {
-    color: white;
-    font-size: 15px;
-    font-family: 'Gilroy-Medium';
-    margin-left: 10px;
-    width: auto;
-    margin-bottom: 0;
-  }
-
 
   // CARD CONTAINER
   .card-container {
