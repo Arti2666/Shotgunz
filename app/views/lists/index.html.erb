@@ -1,5 +1,6 @@
 <div class="alexis-marketplace-main">
   <div class="alexis-marketplace-second">
+
     <div class="alexis-marketplace-menu">
       <div class="marketplace-menu-element">
         <button class='public' > public </button>
@@ -12,6 +13,7 @@
       </div>
     </div>
 
+
     <div class="alexis-marketplace-lists-container">
       <div class="div-public">
         <%= render "lists", lists: @lists %>
@@ -23,12 +25,14 @@
         <%= render "lists", lists: @shotguns %>
       </div>
     </div>
+
     <div class="alexis-marketplace-container-create-btn">
       <div class="alexis-marketplace-create-btn">
         <%= link_to new_list_path do %>
           <i class="fas fa-plus"></i>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+
   </div>
 </div>
