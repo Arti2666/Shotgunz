@@ -2,11 +2,14 @@ class ListsController < ApplicationController
   before_action :authenticate_user!, except: %I[show index]
 
   def index
-    @lists = List.all.active.public_lists
-    unless current_user.nil?
-      @priv_lists = List.all.active.private_lists
+    @lists = List.includes(:user).active.public_lists
+    if current_user.nil?
+      @priv_lists = []
+      @shotguns = []
+    else
+      @priv_lists = List.includes(:user).active.private_lists
       my_tag = current_user.shotguns.pluck(:list_id)
-      @shotguns = List.active.where("id IN (?)", my_tag)
+      @shotguns = List.includes(shotguns: :user).active.where("id IN (?)", my_tag)
     end
     # @lists = List.all.active.private_lists.where("user_id= ?", current_user.id)
     # Shotgun.where(user_id: 4).each {|x| puts x.list_id}
