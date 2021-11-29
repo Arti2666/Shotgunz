@@ -1,0 +1,7 @@
+<% if list.shotguns.count == 0 %>
+  <p><span><%= list.places %> shotguns available</span> out of <span><%= list.places %></span></p>
+<% elsif list.shotguns.count > 0 && list.shotguns.count < list.places %>
+  <p><span><%= list.shotguns.count %> shotguns</span> out of <span><%= list.places %></span></p>
+<% else %>
+  <p><span><%= list.shotguns.count%> / <%=list.places%></span> - Waiting List</p>
+<% end %>

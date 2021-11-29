@@ -1,13 +1,15 @@
 <div class="list-show d-flex align-items-center justify-content-center flex-column">
-  <div class="top-container d-flex align-items-center w-85 mb-3">
-    <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
-      <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
-        <i class="fas fa-arrow-left"></i>
-        <p>Back to list</p>
-      <% end %>
-    </div>
-    <div class="delete-list-btn w-50 d-flex align-items-center justify-content-end">
-      <%= check_delete_btn %>
+  <div data-aos="fade-up-left" data-aos-delay="300">
+    <div class="top-container d-flex align-items-center w-85 mb-3">
+      <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
+        <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
+          <i class="fas fa-arrow-left"></i>
+          <p>Back to list</p>
+        <% end %>
+      </div>
+      <div class="delete-list-btn w-50 d-flex align-items-center justify-content-end">
+        <%= check_delete_btn %>
+      </div>
     </div>
   </div>
 <div data-aos="flip-right" data-aos-delay="300">
@@ -29,7 +31,7 @@
         <h2>Shotgunners</h2>
       </div>
       <div class="shotgunners-left">
-        <p><span><%= @list.shotguns.count %> shotguns</span> left out of <span><%= @list.places %></span></p>
+        <%= render 'shared/shotgunners_left', list: @list %>
       </div>
       <div class="shotgunners-list">
         <% @list.shotguns.each do |shotgun| %>
@@ -47,7 +49,7 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
+<div data-aos="fade-up-right" data-aos-delay="300">
   <%= check_shotgun_btn %>
 </div>
