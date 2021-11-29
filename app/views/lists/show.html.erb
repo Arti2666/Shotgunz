@@ -23,7 +23,7 @@
           <p><span>Created by: </span><%= @list.user.email %></p>
         </div>
         <div class="card-creation-time">
-          <p>8 minutes ago</p>
+          <p>Ends: <%=@list.end_time.strftime('%D at %R')%></p>
         </div>
         <div class="card-description">
           <p><span>Description: </span><%= @list.description %></p>
