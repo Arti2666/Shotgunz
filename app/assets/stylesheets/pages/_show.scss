@@ -1,22 +1,52 @@
+//SHOTGUNNERS LEFT
+
+.shotgunners-left {
+  // background-color: orange;
+  color: white;
+  margin-bottom: 10px;
+
+  p {
+    font-family: 'Gilroy-Medium';
+    font-size: 15px;
+    margin: 0;
+  }
+
+  span {
+    font-size: 15px;
+    font-family: 'Gilroy-Bold';
+  }
+}
+
 //BACK TO LIST AND DELETE CONTAINER
 .top-container {
   max-width: 400px;
   min-width: 300px;
 }
 
-.top-container .fas.fa-arrow-left {
+.top-container a {
   color: white;
   font-size: 15px;
+  font-family: 'Gilroy-Medium';
+  width: auto;
+  margin-bottom: 0;
 }
 
-.top-container a {
+.back-to-list-btn .fas.fa-arrow-left {
+  color: white;
+  font-size: 15px;
+  margin-left: 1px;
+}
+
+.back-to-list-btn p {
   color: white;
   font-size: 15px;
   font-family: 'Gilroy-Medium';
   margin-left: 10px;
   width: auto;
   margin-bottom: 0;
+  padding-top: 3px;
 }
+
 
 // LIST SHOW SCOPING
 .list-show {
@@ -118,24 +148,6 @@
     font-family: 'Gilroy-Bold';
     margin: 0;
   }
-
-  .shotgunners-left {
-    // background-color: orange;
-    color: white;
-    margin-bottom: 10px;
-
-    p {
-      font-family: 'Gilroy-Medium';
-      font-size: 15px;
-      margin: 0;
-    }
-
-    span {
-      font-size: 15px;
-      font-family: 'Gilroy-Bold';
-    }
-  }
-
 
   // SHOTGUNERS CARD LIST
   .shotgunners-list {
