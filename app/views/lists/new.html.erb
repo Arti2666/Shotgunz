@@ -6,7 +6,7 @@
       <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
         <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
           <i class="fas fa-arrow-left"></i>
-          <p>Back to list</p>
+          <p>Back to lists</p>
         <% end %>
       </div>
     </div>
@@ -21,6 +21,7 @@
               <%= f.input :description, as: :text, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
               <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
               <%= f.input :prebookspot, as: :boolean %>
+              <%= f.input :public, as: :boolean %>
               <div id="DateBoxes">
                 <p>Duration</p>
                 <div class="datesetup">
@@ -41,9 +42,9 @@
               </div>
               <%= f.input :category, collection: List::CATEGORY %>
             </div>
-        </div>
       <div class="shotgun-cta">
-        <%= f.submit %>
+        <%= f.submit data: { disable_with: false } %>
       </div>
     <% end %>
+        </div>
 </div>
