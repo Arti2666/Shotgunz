@@ -41,10 +41,10 @@
                 </div>
               </div>
               <%= f.input :category, collection: List::CATEGORY %>
+              <div class="shotgun-cta">
+                <%= f.submit data: { disable_with: false } %>
+               </div>
+             </div>
+              <% end %>
             </div>
-      <div class="shotgun-cta">
-        <%= f.submit data: { disable_with: false } %>
-      </div>
-    <% end %>
-        </div>
-</div>
+           </div>
