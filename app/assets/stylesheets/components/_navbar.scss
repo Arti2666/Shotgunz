@@ -1,18 +1,3 @@
-// NAVBAR LE WAGON
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-  height: 9vh;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 //NAVBAR CONTAINER
 .tanki-navbar {
   height: 9vh;
@@ -29,12 +14,37 @@
   margin: 0 auto;
 }
 
-//BURGER MENU
+// MENU
 
 .tanki-burger-menu-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  .dropdown {
+    button {
+      background-color: white;
+      color: #BE1BAC;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: rgb(241, 241, 241);
+    }
+
+    button:focus {
+      box-shadow: none;
+    }
+
+    .login-btn-design {
+      background-color: white;
+      color: #BE1BAC;
+      text-decoration: none;
+      padding: 12px 8px;
+      border-radius: 5px;
+    }
+  }
 }
 
 .tanki-burger-menu-white-square {

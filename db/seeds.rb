@@ -44,7 +44,7 @@ beer = { name: "Beer", description: "fight for beer", places: 3, category: "Food
 poker = { name: "Poker", description: "Shuffle up & deal", places: 5, category: "Game", user_id: 3, start_time: "2021-11-25 12:00:00", end_time: "2021-11-29 18:00:00", prebookspot: "false" }
 foot = { name: "Foot", description: "Arena 5v5", places: 9, category: "Sports", user_id: 4, start_time: "2021-11-25 8:00:00", end_time: "2021-11-30 12:00:00", prebookspot: "false" }
 party = { name: "Dinner", description: "Jap at home", places: 4, category: "Party", user_id: 5, start_time: "2021-11-25 14:00:00", end_time: "2021-11-26 20:00:00", prebookspot: "false" }
-amsterdam = { name: "CoffeeShop Amsterdam", description: "chill and smoke", places: 4, category: "Holiday", user_id: 6, start_time: "2021-11-25 9:00:00", end_time: "2021-11-30 18:00:00", prebookspot: "false" }
+amsterdam = { name: "Amsterdam", description: "chillin' and puffin'", places: 4, category: "Holiday", user_id: 6, start_time: "2021-11-25 9:00:00", end_time: "2021-11-30 18:00:00", prebookspot: "false" }
 concert = { name: "Damso concert", description: "Disney arena", places: 20, category: "Other", user_id: 8, start_time: "2021-11-25 8:00:00", end_time: "2021-12-23 18:00:00", prebookspot: "false" }
 
 [coffee, beer, poker, foot, party, amsterdam, concert].each do |attributes|

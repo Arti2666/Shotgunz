@@ -1,6 +1,58 @@
+//SHOTGUNNERS LEFT
+
+.shotgunners-left {
+  // background-color: orange;
+  color: white;
+  margin-bottom: 10px;
+
+  p {
+    font-family: 'Gilroy-Medium';
+    font-size: 15px;
+    margin: 0;
+  }
+
+  span {
+    font-size: 15px;
+    font-family: 'Gilroy-Bold';
+  }
+}
+
+//BACK TO LIST AND DELETE CONTAINER
+.top-container {
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.top-container a {
+  color: white;
+  font-size: 15px;
+  font-family: 'Gilroy-Medium';
+  width: auto;
+  margin-bottom: 0;
+}
+
+.back-to-list-btn .fas.fa-arrow-left {
+  color: white;
+  font-size: 15px;
+  margin-left: 1px;
+}
+
+.back-to-list-btn p {
+  color: white;
+  font-size: 15px;
+  font-family: 'Gilroy-Medium';
+  margin-left: 10px;
+  width: auto;
+  margin-bottom: 0;
+  padding-top: 3px;
+}
+
 
 // LIST SHOW SCOPING
 .list-show {
+  a {
+  text-decoration: none;
+  }
 
   // CARD CONTAINER
   .card-container {
@@ -8,51 +60,66 @@
     border-radius: 12px;
     height: auto;
     width: 85%;
+    max-width: 400px;
+    min-width: 300px;
   }
 
   .card-container-flexbox {
     height: 100%;
-    width: 85%;
+    width: 80%;
   }
 
   // CARD TITLE
   .card-title {
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 10px;
-    background-color: blue;
+    // background-color: blue;
     height: auto;
     color: white;
   }
 
-  .card-title.h1 {
+  .card-title h1 {
     font-size: 30px;
-    font-family: 'Gilroy-Heavy';
+    font-family: 'Gilroy-Bold';
   }
 
   // CARD CREATOR CONTAINER
-  .card-creator-container {
-    background-color: yellow;
+  .card-creator-name {
+    // background-color: green;
+    color: white;
     margin-bottom: 10px;
   }
 
-  .card-creator-img {
-    background-color: green;
-  }
-
-  .card-creator-name{
-    background-color: green;
+  .card-creator-name p {
     color: white;
+    font-size: 14px;
+    font-family: 'Gilroy-Medium';
+    margin: 0;
   }
 
+  .card-creator-name p span {
+    color: white;
+    font-size: 14px;
+    font-family: 'Gilroy-Bold';
+  }
+
+  //CARD CREATION TIME
   .card-creation-time {
-    background-color: green;
+    // background-color: green;
     color: white;
+    margin-bottom: 10px;
+  }
+
+  .card-creation-time p {
+    font-size: 10px;
+    font-family: 'Gilroy-Medium';
+    margin: 0;
   }
 
   // CARD DESCRIPTION
   .card-description {
-    background-color: red;
-    margin-bottom: 10px;
+    // background-color: red;
+    margin-bottom: 20px;
     color: white;
   }
 
@@ -60,6 +127,7 @@
     color: white;
     font-size: 14px;
     font-family: 'Gilroy-Medium';
+    margin: 0;
   }
 
   .card-description p span {
@@ -68,37 +136,48 @@
     font-family: 'Gilroy-Bold';
   }
 
-
   // SHOTGUNERS CONTAINER
-  .shotgunners-containers {
-    background-color: purple;
+  .shotgunners-title {
+    // background-color: orange;
+    color: white;
     margin-bottom: 10px;
   }
 
-  .shotgunners-title {
-    background-color: orange;
-    color: white;
-  }
-
-  .shotgunners-left {
-    background-color: orange;
-    color: white;
+  .shotgunners-title h2 {
+    font-size: 24px;
+    font-family: 'Gilroy-Bold';
+    margin: 0;
   }
 
   // SHOTGUNERS CARD LIST
   .shotgunners-list {
-    background-color: blue;
-    margin-bottom: 10px;
+    // background-color: blue;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: scroll;
+    color: white;
+    margin-left: 10px;
   }
+
+  .shotgunners-list p .fas.fa-arrow-right {
+    font-size: 12px;
+  }
+
+  .shotgunners-list p {
+    font-size: 15px;
+    font-family: 'Gilroy-Medium';
+    margin-bottom: 5px;
+  }
+
 
   // SHARING LINK CONTAINER
   .sharing-link-container {
-    background-color: yellowgreen;
-    margin-bottom: 10px;
+    // background-color: yellowgreen;
+    margin-bottom: 15px;
   }
 
   .sharing-link-tagline {
-    background-color: pink;
+    // background-color: pink;
     height: auto;
   }
 
@@ -106,6 +185,7 @@
     color: white;
     font-size: 15px;
     font-family: 'Gilroy-Heavy';
+    margin: 0;
   }
 
   .sharing-link-logo {
@@ -114,11 +194,19 @@
     height: 23px;
     color: white;
     border-radius: 10px;
+    margin-left: 10px;
   }
 
-  .sharing-link-logo.fas.fa-link {
-    color: white;
+  .sharing-link-logo .fas.fa-link {
+    font-size: 12px;
   }
 
-
+  //SHOTGUN & CANCEL CTA
+  .shotgun-cta {
+    margin-bottom: 0;
+    font-family: 'Gilroy-HeavyItalic';
+    font-size: 26px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: white;
+  }
 }
