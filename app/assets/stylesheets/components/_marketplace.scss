@@ -30,12 +30,30 @@
     justify-content: center;
     margin: 10px;
 
+    button {
+      background-color: transparent;
+      border: none;
+      color: white;
+    }
+
+    button:focus {
+      border-bottom: 2px solid white;
+    }
+
     p {
       font-size: 0.8rem;
       font-weight: bold;
       margin: 0;
       color: white;
     }
+  }
+}
+
+// NO LISTS
+
+.marketplace-text-empty {
+  h2 {
+    color: white;
   }
 }
 
