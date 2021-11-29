@@ -10,6 +10,8 @@ class List < ApplicationRecord
   validates :places, presence: true
 
   scope :active, -> { where("start_time < ? AND end_time > ?", DateTime.now, DateTime.now) }
+  scope :public_lists, -> { where("public = true") }
+  scope :private_lists, -> { where("public= false") }
 
   def belongs_to_user?(user)
     listed_users.include? user
