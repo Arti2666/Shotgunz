@@ -18,3 +18,11 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+import { displayIndex } from "../display_index"
+
+import Turbolinks from "turbolinks"
+Turbolinks.start()
+
+document.addEventListener('turbolinks:load', () => {
+  displayIndex();
+})

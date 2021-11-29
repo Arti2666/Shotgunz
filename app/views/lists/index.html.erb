@@ -1,36 +1,27 @@
 <div class="alexis-marketplace-main">
   <div class="alexis-marketplace-second">
     <div class="alexis-marketplace-menu">
-        <div class="marketplace-menu-element">
-          <p>Public</p>
-        </div>
-        <div class="marketplace-menu-element">
-          <p>Private</p>
-        </div>
-        <div class="marketplace-menu-element">
-          <p>My shotgun</p>
-        </div>
+      <div class="marketplace-menu-element">
+        <button class='public' > public </button>
       </div>
+      <div class="marketplace-menu-element">
+        <button class='private' > private </button>
+      </div>
+      <div class="marketplace-menu-element">
+        <button class='shotguns' > my shotguns </button>
+      </div>
+    </div>
 
     <div class="alexis-marketplace-lists-container">
-      <% @lists.each do |list|%>
-        <div class="alexis-marketplace-card">
-          <div class="alexis-marketplace-card-element">
-            <%= link_to "", list_path(list), class:"alexis-click"%>
-            <div class="alexis-card-left-element">
-              <%= link_to list.name, list_path(list) %>
-              <p>4 shotguns left out of 15</p>
-              <%= list.user.email %>
-            </div>
-            <div class="alexis-card-right-element">
-              <p>8 minutes ago</p>
-              <div class="alexis-card-show-btn">
-                <i class="fas fa-chevron-right"><%= link_to "", list_path(list), class:"alexis-market-show-btn" %></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <div class="div-public">
+        <%= render "lists", lists: @lists %>
+      </div>
+      <div class="div-private d-none">
+        <%= render "lists", lists: @priv_lists %>
+      </div>
+      <div class="div-my-shot d-none">
+        <%= render "lists", lists: @shotguns %>
+      </div>
     </div>
     <div class="alexis-marketplace-container-create-btn">
       <div class="alexis-marketplace-create-btn">
