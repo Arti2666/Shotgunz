@@ -7121,6 +7121,11 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stimulus-clipboard@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-clipboard/-/stimulus-clipboard-3.0.0.tgz#25bc319eeaa68de683edeeddc5bf58a578cb8142"
+  integrity sha512-OcRfJ8LoXj82Ve/5LKEBSxy8Y1YYmtp1qNRSb0nchk98rPtG8oPlxk8fgmFq/qDUPorM9YHQpc4QFN0ka68Ckg==
+
 stimulus-flatpickr@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/stimulus-flatpickr/-/stimulus-flatpickr-1.4.0.tgz#a41071a3e69cfc50b7eaaacf356fc0ab1ab0543c"

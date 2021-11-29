@@ -34,12 +34,12 @@
       </div>
       <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
         <div class="sharing-link-container d-flex align-items-center justify-content-center">
-          <div class="sharing-link-tagline">
-            <p>SHARE THE LINK</p>
-          </div>
-          <div class="sharing-link-logo d-flex align-items-center justify-content-center">
-            <i class="fas fa-link"></i>
-          </div>
+          <div data-controller="clipboard" data-clipboard-success-content="Copied!" class="sharing-link-tagline">
+            <input type="hidden" value='http://www.shotgunz.net/lists/<%=@list.id%>' data-clipboard-target="source" id="LinkInput">
+            <div class="share-link-btn">
+              <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="sharing-link-logo d-flex align-items-center justify-content-center">
+              Share Link</button>
+            </div>
         </div>
       </div>
     </div>
