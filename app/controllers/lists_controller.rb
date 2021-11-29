@@ -11,8 +11,6 @@ class ListsController < ApplicationController
       my_tag = current_user.shotguns.pluck(:list_id)
       @shotguns = List.includes(shotguns: :user).active.where("id IN (?)", my_tag)
     end
-    # @lists = List.all.active.private_lists.where("user_id= ?", current_user.id)
-    # Shotgun.where(user_id: 4).each {|x| puts x.list_id}
   end
 
   def show
