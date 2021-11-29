@@ -12,41 +12,43 @@
       </div>
     </div>
   </div>
-<div data-aos="flip-right" data-aos-delay="300">
-  <div class="card-container d-flex align-items-center justify-content-center flex-column">
-    <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
-      <div class="card-title">
-        <h1><%= @list.name %></h1>
-      </div>
-      <div class="card-creator-name">
-        <p><span>Created by: </span><%= @list.user.email %></p>
-      </div>
-      <div class="card-creation-time">
-        <p>8 minutes ago</p>
-      </div>
-      <div class="card-description">
-        <p><span>Description: </span><%= @list.description %></p>
-      </div>
-      <div class="shotgunners-title">
-        <h2>Shotgunners</h2>
-      </div>
-      <div class="shotgunners-left">
-        <%= render 'shared/shotgunners_left', list: @list %>
-      </div>
-      <div class="shotgunners-list">
-        <% @list.shotguns.each do |shotgun| %>
-          <p><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
-        <% end %>
-      </div>
-      <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
-        <div class="sharing-link-container d-flex align-items-center justify-content-center">
-          <div data-controller="clipboard" data-clipboard-success-content="Copied!" class="sharing-link-tagline">
-            <input type="hidden" value='http://www.shotgunz.net/lists/<%=@list.id%>' data-clipboard-target="source" id="LinkInput">
-            <div class="share-link-btn">
-              <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="sharing-link-logo d-flex align-items-center justify-content-center">
-              Share Link</button>
-            </div>
+
+  <div data-aos="flip-right" data-aos-delay="300">
+    <div class="card-container d-flex align-items-center justify-content-center flex-column">
+      <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
+        <div class="card-title">
+          <h1><%= @list.name %></h1>
         </div>
+        <div class="card-creator-name">
+          <p><span>Created by: </span><%= @list.user.email %></p>
+        </div>
+        <div class="card-creation-time">
+          <p>8 minutes ago</p>
+        </div>
+        <div class="card-description">
+          <p><span>Description: </span><%= @list.description %></p>
+        </div>
+        <div class="shotgunners-title">
+          <h2>Shotgunners</h2>
+        </div>
+        <div class="shotgunners-left">
+          <%= render 'shared/shotgunners_left', list: @list %>
+        </div>
+        <div class="shotgunners-list">
+          <% @list.shotguns.each do |shotgun| %>
+            <p><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
+          <% end %>
+        </div>
+        <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
+          <div class="sharing-link-container d-flex align-items-center justify-content-center">
+            <div data-controller="clipboard" data-clipboard-success-content="Copied!" class="sharing-link-tagline">
+              <input type="hidden" value='http://www.shotgunz.net/lists/<%=@list.id%>' data-clipboard-target="source" id="LinkInput">
+              <div class="share-link-btn">
+                <button type="button" data-action="clipboard#copy" data-clipboard-target="button" class="sharing-link-logo d-flex align-items-center justify-content-center">
+                Share Link</button>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
 </div>
