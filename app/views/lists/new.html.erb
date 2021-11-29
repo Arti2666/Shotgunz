@@ -3,7 +3,10 @@
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <div class="top-container d-flex align-items-center w-85 mb-3">
     <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
-      <i class="fas fa-arrow-left"></i><%= link_to "Back to list", lists_path %>
+      <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
+        <i class="fas fa-arrow-left"></i>
+        <p>Back to list</p>
+      <% end %>
     </div>
   </div>
         <div class="alexis-create-form-card">

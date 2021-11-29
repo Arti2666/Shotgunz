@@ -1,12 +1,16 @@
 <div class="list-show d-flex align-items-center justify-content-center flex-column">
   <div class="top-container d-flex align-items-center w-85 mb-3">
     <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
-      <i class="fas fa-arrow-left"></i><%= link_to "Back to list", lists_path %>
+      <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
+        <i class="fas fa-arrow-left"></i>
+        <p>Back to list</p>
+      <% end %>
     </div>
     <div class="delete-list-btn w-50 d-flex align-items-center justify-content-end">
       <%= check_delete_btn %>
     </div>
   </div>
+<div data-aos="flip-right" data-aos-delay="300">
   <div class="card-container d-flex align-items-center justify-content-center flex-column">
     <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
       <div class="card-title">
@@ -44,5 +48,6 @@
       </div>
     </div>
   </div>
+</div>
   <%= check_shotgun_btn %>
 </div>
