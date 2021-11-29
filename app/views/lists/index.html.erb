@@ -20,7 +20,7 @@
             <div class="alexis-card-left-element">
               <%= link_to list.name, list_path(list) %>
               <div class="shotgunners-left">
-                <p><span><%= list.shotguns.count %> shotguns</span> left out of <span><%= list.places %></span></p>
+                <%= render 'shared/shotgunners_left', list: list %>
               </div>
               <%= list.user.username %>
             </div>
