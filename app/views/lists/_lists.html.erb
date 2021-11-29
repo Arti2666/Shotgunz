@@ -1,5 +1,7 @@
   <% if lists.empty? %>
-    <%= "no!!!" %>
+    <div class="marketplace-text-empty">
+      <h2>No list in this section.</h2>
+    </div>
   <% else %>
     <% lists.reverse.each do |list|%>
       <div class="alexis-marketplace-card">
