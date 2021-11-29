@@ -179,6 +179,16 @@
   .sharing-link-tagline {
     // background-color: pink;
     height: auto;
+    display: flex;
+    button {
+      border: none;
+    }
+
+    .share-link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .sharing-link-tagline p{
@@ -188,11 +198,16 @@
     margin: 0;
   }
 
+  .copy-link {
+    display: flex;
+  }
+
   .sharing-link-logo {
+    display: flex;
     background-color: #A002AD;
-    width: 27px;
-    height: 23px;
     color: white;
+    height: 100%;
+    width: 120px;
     border-radius: 10px;
     margin-left: 10px;
   }
@@ -208,5 +223,6 @@
     font-size: 26px;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: white;
+    margin-bottom: 10px;
   }
 }

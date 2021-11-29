@@ -1,0 +1,22 @@
+  <% if lists.empty? %>
+    <%= "no!!!" %>
+  <% else %>
+    <% lists.reverse.each do |list|%>
+      <div class="alexis-marketplace-card">
+        <div class="alexis-marketplace-card-element">
+          <%= link_to "", list_path(list), class:"alexis-click"%>
+          <div class="alexis-card-left-element">
+            <%= link_to list.name, list_path(list) %>
+            <p>4 shotguns left out of 15</p>
+            <%= list.user.email %>
+          </div>
+          <div class="alexis-card-right-element">
+            <p>8 minutes ago</p>
+            <div class="alexis-card-show-btn">
+              <i class="fas fa-chevron-right"><%= link_to "", list_path(list), class:"alexis-market-show-btn" %></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
