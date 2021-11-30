@@ -1,5 +1,7 @@
   <% if lists.empty? %>
-    <%= "This list is empty" %>
+    <div class="marketplace-text-empty">
+      <h2>No lists in this section 😭</h2>
+    </div>
   <% else %>
     <% lists.reverse.each do |list|%>
       <div class="alexis-marketplace-card">
@@ -17,7 +19,7 @@
             <%= list.user.email %>
           </div>
           <div class="alexis-card-right-element">
-            <p>8 minutes ago</p>
+            <p><%=list.end_time.strftime('%D')%></p>
             <div class="alexis-card-show-btn">
               <i class="fas fa-chevron-right"><%= link_to "", list_path(list), class:"alexis-market-show-btn" %></i>
             </div>

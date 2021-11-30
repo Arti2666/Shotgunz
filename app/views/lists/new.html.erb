@@ -6,7 +6,7 @@
       <div class="back-to-list-btn w-50 d-flex align-items-center justify-content-start ">
         <%= link_to lists_path, class:"d-flex align-items-center justify-content-center" do %>
           <i class="fas fa-arrow-left"></i>
-          <p>Back to list</p>
+          <p>Back to Lists</p>
         <% end %>
       </div>
     </div>
@@ -15,36 +15,36 @@
     <div class="title mb-3">
       <h1>Create a new List</h1>
     </div>
-      <%= simple_form_for(@list) do |f| %>
-        <div class="create-form-element">
-          <%= f.input :name, label: "List name 📋"%>
-          <%= f.input :description, as: :text, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
-          <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
-          <%= f.input :prebookspot, as: :boolean %>
-          <%= f.input :public, as: :boolean %>
-          <div id="DateBoxes">
-            <p>Duration</p>
-            <div class="datesetup">
-              <div class="start-time">
-                <%= f.text_field :start_time, placeholder: "Opens", input_html: { id: "range_start" }, data: {
-                    controller: "flatpickr",
-                    altInput: true,
-                    flatpickr_enable_time: true,
-                    flatpickr_mode: 'range',
-                    flatpickr_date_format: "Y-m-d H:i",
-                    flatpickr_min_Date: "today",
-                  } %>
-              </div>
-              <div class="end-time">
-                <%= f.text_field :end_time, input_html: { id: "range_end" }, placeholder: "Closes", id: 'secondRangeInput' %>
-              </div>
+    <%= simple_form_for(@list) do |f| %>
+      <div class="create-form-element">
+        <%= f.input :name, label: "List name 📋"%>
+        <%= f.input :description, as: :text, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
+        <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
+        <%= f.input :prebookspot, as: :boolean %>
+        <%= f.input :public, as: :boolean %>
+        <div id="DateBoxes">
+          <p>Duration</p>
+          <div class="datesetup">
+            <div class="start-time">
+              <%= f.text_field :start_time, placeholder: "Opens", input_html: { id: "range_start" }, data: {
+                  controller: "flatpickr",
+                  altInput: true,
+                  flatpickr_enable_time: true,
+                  flatpickr_mode: 'range',
+                  flatpickr_date_format: "Y-m-d H:i",
+                  flatpickr_min_Date: "today",
+                } %>
+            </div>
+            <div class="end-time">
+              <%= f.text_field :end_time, input_html: { id: "range_end" }, placeholder: "Closes", id: 'secondRangeInput' %>
             </div>
           </div>
-          <%= f.input :category, collection: List::CATEGORY %>
-          <div class="shotgun-cta">
-            <%= f.submit %>
-          </div>
-          <% end %>
         </div>
-    </div>
+        <%= f.input :category, collection: List::CATEGORY %>
+        <div class="alexis-submitbtn-create">
+          <%= f.submit data: { disable_with: false } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

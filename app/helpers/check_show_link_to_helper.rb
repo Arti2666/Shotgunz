@@ -8,6 +8,6 @@ module CheckShowLinkToHelper
   end
 
   def check_delete_btn
-    link_to "Delete Shotgun", list_path(@list), method: :delete if current_user && current_user.id == @list.user_id
+    link_to "Delete List", list_path(@list), method: :delete if current_user && current_user.id == @list.user_id
   end
 end
