@@ -15,6 +15,10 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    if user_signed_in?
+      @chatroom = @list.chatroom
+      @message = Message.new(user_id: current_user.id, chatroom_id: @chatroom.id)
+    end
   end
 
   def new
@@ -31,6 +35,9 @@ class ListsController < ApplicationController
         @shotgun.list_id = @list.id
         @shotgun.save
       end
+      @chatroom = Chatroom.new
+      @chatroom.list_id = @list.id
+      @chatroom.save
       redirect_to lists_path
     else
       render :new
