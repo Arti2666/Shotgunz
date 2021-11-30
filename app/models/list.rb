@@ -2,6 +2,7 @@ require 'date'
 
 class List < ApplicationRecord
   belongs_to :user
+  has_one :chatroom
   has_many :shotguns, dependent: :destroy
   has_many :listed_users, through: :shotguns, source: :user
 
