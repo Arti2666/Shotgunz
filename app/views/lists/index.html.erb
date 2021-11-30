@@ -14,8 +14,8 @@
     </div>
 
     <div class="alexis-marketplace-lists-container">
-      <div class="div-public">
-        <%= render "lists_cable", lists: @lists %>
+      <div class="div-public" data-controller="index-subscription">
+        <%= render "lists", lists: @public_list %>
       </div>
       <div class="div-private d-none">
         <%= render "lists", lists: @priv_lists %>
