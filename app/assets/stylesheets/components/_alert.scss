@@ -3,14 +3,32 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  border-radius: 10px;
+  background: linear-gradient(to right, #010234, #3F1964);
+  border: none;
+  color: white;
+  button {
+    color: white;
+    filter: invert(1) contrast(1);
+  }
 }
 
 #kill {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: fit-content;
   text-align: center;
-  padding: 0;
+  white-space: normal;
+  background: #222222;
+  padding: 40px;
+  button {
+    filter: invert(-1) contrast(1);
+  }
+
+  .Arti-success {
+    color: white;
+  }
 }
 .arti-alert {
   background-color: white;
