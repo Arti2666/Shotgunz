@@ -12,9 +12,10 @@
         <button class='shotguns' > my shotguns </button>
       </div>
     </div>
+
     <div class="alexis-marketplace-lists-container">
       <div class="div-public">
-        <%= render "lists", lists: @lists %>
+        <%= render "lists_cable", lists: @lists %>
       </div>
       <div class="div-private d-none">
         <%= render "lists", lists: @priv_lists %>

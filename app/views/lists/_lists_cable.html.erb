@@ -1,0 +1,9 @@
+
+      <div class="lists"
+        data-controller="index-subscription"
+        data-index-subscription-index-id-value= "index"
+      >
+        <% lists.each do |list| %>
+          <%= render "lists/list", list: list %>
+        <% end %>
+      </div>

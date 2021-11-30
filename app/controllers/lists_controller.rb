@@ -31,7 +31,10 @@ class ListsController < ApplicationController
         @shotgun.list_id = @list.id
         @shotgun.save
       end
-      redirect_to lists_path
+      IndexChannel.broadcast_to(
+        "index",
+        render_to_string(partial: "list", locals: { list: @list })
+      )
     else
       render :new
     end
