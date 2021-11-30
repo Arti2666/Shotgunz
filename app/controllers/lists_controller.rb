@@ -7,7 +7,7 @@ class ListsController < ApplicationController
       @priv_lists = []
       @shotguns = []
     else
-      @priv_lists = List.includes(:user).active.private_lists
+      @priv_lists = List.where("User_id =? ", current_user.id)
       my_tag = current_user.shotguns.pluck(:list_id)
       @shotguns = List.includes(shotguns: :user).active.where("id IN (?)", my_tag)
     end
