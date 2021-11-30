@@ -35,9 +35,8 @@
           <%= render 'shared/shotgunners_left', list: @list %>
         </div>
         <div class="shotgunners-list">
-          <% @list.shotguns.each do |shotgun| %>
-            <p><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
-          <% end %>
+          <%# class winner et waitlist selon places => shared/winner %>
+          <%= render 'shared/winner' %>
         </div>
         <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
           <div class="sharing-link-container d-flex align-items-center justify-content-center">

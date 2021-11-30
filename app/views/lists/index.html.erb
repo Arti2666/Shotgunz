@@ -14,13 +14,13 @@
     </div>
     <div class="alexis-marketplace-lists-container">
       <div class="div-public">
-        <%= render "lists", lists: @lists %>
+        <%= render "shared/lists", lists: @lists %>
       </div>
       <div class="div-private d-none">
-        <%= render "lists", lists: @priv_lists %>
+        <%= render "shared/lists", lists: @priv_lists %>
       </div>
       <div class="div-my-shot d-none">
-        <%= render "lists", lists: @shotguns %>
+        <%= render "shared/lists", lists: @shotguns %>
       </div>
     </div>
 
