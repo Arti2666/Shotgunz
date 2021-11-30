@@ -17,16 +17,16 @@
     <div class="card-container d-flex align-items-center justify-content-center flex-column">
       <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
         <div class="card-title">
-          <h1><%= @list.name %></h1>
+          <h1><%= @list.name.titleize %></h1>
         </div>
         <div class="card-creator-name">
-          <p><span>Created by: </span><%= @list.user.email %></p>
+          <p><span>Created by: </span><%= @list.user.username.capitalize %></p>
         </div>
         <div class="card-creation-time">
           <p>Ends: <%=@list.end_time.strftime('%D at %R')%></p>
         </div>
         <div class="card-description">
-          <p><span>Description: </span><%= @list.description %></p>
+          <p><span>Description: </span><%= @list.description.capitalize %></p>
         </div>
         <div class="shotgunners-title">
           <h2>Shotgunners</h2>
