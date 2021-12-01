@@ -55,13 +55,16 @@
   <%= check_shotgun_btn %>
 </div>
 
+
 <%# CHAT NON DISPO SI UNLOG && CHAT ACTIF SI SHOTGUN %>
 <% if !current_user.nil? && @list.shotguns.any? { |shot| shot.user_id == current_user.id } %>
 
   <%# BUTTON TRIGGER MODAL %>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
+    <div class="chatroom-btn-access">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <i class="fas fa-comment-dots"></i>
+      </button>
+    </div>
 
   <%# MODAL %>
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
