@@ -77,12 +77,12 @@
               <%= render "messages/message", message: message %>
             <% end %>
           </div>
-        </div>
-        <div class="modal-footer">
-        <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit %>
-        <% end %>
+          <div class="modal-footer">
+            <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+              <%= f.input :content, label: false %>
+              <%= f.submit %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

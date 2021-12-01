@@ -15,7 +15,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    if user_signed_in?
+    # && list.chatroom a delete apres clean db
+    if user_signed_in? && @list.chatroom
       @chatroom = @list.chatroom
       @message = Message.new(user_id: current_user.id, chatroom_id: @chatroom.id)
     end
