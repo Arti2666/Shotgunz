@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :authenticate_user!, except: %I[show index]
 
   def index
+    # @public_list = List.public_lists
     @lists = List.includes(:user).active.public_lists
     if current_user.nil?
       @priv_lists = []
@@ -36,10 +37,19 @@ class ListsController < ApplicationController
         @shotgun.list_id = @list.id
         @shotgun.save
       end
+
       @chatroom = Chatroom.new
       @chatroom.list_id = @list.id
       @chatroom.save
-      redirect_to lists_path
+
+      if @list.public
+        IndexChannel.broadcast_to(
+        IndexChannel::PUBLIC_CHANNEL,
+        render_to_string(partial: "list", locals: { list: @list })
+        )
+      end
+      redirect_to list_path(@list)
+
     else
       render :new
     end
