@@ -24,9 +24,6 @@ import "aos/dist/aos.css"
 
 import { displayIndex } from "../display_index"
 
-import Turbolinks from "turbolinks"
-Turbolinks.start()
-
 document.addEventListener('turbolinks:load', () => {
   displayIndex();
 });
