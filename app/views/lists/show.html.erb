@@ -55,7 +55,9 @@
   <%= check_shotgun_btn %>
 </div>
 
-<% if user_signed_in? %>
+<%# CHAT NON DISPO SI UNLOG && CHAT ACTIF SI SHOTGUN %>
+<% if !current_user.nil? && @list.shotguns.any? { |shot| shot.user_id == current_user.id } %>
+
   <%# BUTTON TRIGGER MODAL %>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Launch static backdrop modal
@@ -77,12 +79,14 @@
               <%= render "messages/message", message: message %>
             <% end %>
           </div>
+
           <div class="modal-footer">
             <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
               <%= f.input :content, label: false %>
               <%= f.submit %>
             <% end %>
           </div>
+
         </div>
       </div>
     </div>
