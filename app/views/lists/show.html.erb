@@ -56,12 +56,12 @@
 </div>
 
 <% if user_signed_in? %>
-  <!-- Button trigger modal -->
+  <%# BUTTON TRIGGER MODAL %>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Launch static backdrop modal
   </button>
 
-  <!-- Modal -->
+  <%# MODAL %>
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -70,13 +70,19 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= render 'shared/chatrooms' %>
-        </div>
-        <div class="modal-footer">
-        <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit %>
-        <% end %>
+          <div class="messages" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+              <%# RENDER MESSAGES %>
+              <%# <%= render 'shared/chatrooms' %>
+              <%= render "messages/message", message: message %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+              <%= f.input :content, label: false %>
+              <%= f.submit %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
