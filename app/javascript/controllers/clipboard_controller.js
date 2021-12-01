@@ -8,6 +8,9 @@ export default class extends Controller {
   }
 
   copy(evt) {
+    console.log(evt);
+    console.log(navigator);
+    console.log(navigator.clipboard);
     evt.preventDefault();
     navigator.clipboard.writeText(this.sourceTarget.value)
     this.buttonTarget.innerText = this.successValue
