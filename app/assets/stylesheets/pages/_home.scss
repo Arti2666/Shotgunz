@@ -106,7 +106,6 @@ a {
   }
 }
 
-
 //SHOTGUN CTA
 .shotgun-cta {
   background-color: #BB11B0;
@@ -133,6 +132,10 @@ a {
     padding: 0;
     color: transparent;
   }
+}
+
+.shotgun-cta:hover {
+  color: transparent;
 }
 
 // QR Code

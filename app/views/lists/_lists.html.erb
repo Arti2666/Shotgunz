@@ -1,0 +1,11 @@
+  <% if lists.empty? %>
+    <div class="marketplace-text-empty">
+      <h2>No lists in this section 😭</h2>
+    </div>
+  <% else %>
+    <div class="lists">
+      <% lists.reverse.each do |list|%>
+          <%= render "list", list: list  %>
+      <% end %>
+    </div>
+  <% end %>

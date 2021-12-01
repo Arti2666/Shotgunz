@@ -12,15 +12,16 @@
         <button class='shotguns' > My Shotguns </button>
       </div>
     </div>
+
     <div class="alexis-marketplace-lists-container">
-      <div class="div-public">
-        <%= render "shared/lists", lists: @lists %>
+      <div class="div-public" data-controller="index-subscription">
+        <%= render "lists", lists: @lists %>
       </div>
       <div class="div-private d-none">
-        <%= render "shared/lists", lists: @priv_lists %>
+        <%= render "lists", lists: @priv_lists %>
       </div>
       <div class="div-my-shot d-none">
-        <%= render "shared/lists", lists: @shotguns %>
+        <%= render "lists", lists: @shotguns %>
       </div>
     </div>
 
