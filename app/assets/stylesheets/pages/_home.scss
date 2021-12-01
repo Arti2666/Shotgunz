@@ -134,3 +134,38 @@ a {
     color: transparent;
   }
 }
+
+// QR Code
+
+.Arti-QR {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.qr-code-logo {
+  position: absolute;
+  width: 20%;
+  top: 40%;
+}
+
+@media screen and (min-width: 768px) {
+  .qr-code-logo {
+    top: 35%;
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .qr-code-logo {
+    top: 30%;
+    width: 12%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .qr-code-logo {
+    top: 30%;
+    width: 10%;
+  }
+}
