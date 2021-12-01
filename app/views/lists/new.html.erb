@@ -17,7 +17,7 @@
     </div>
     <%= simple_form_for(@list) do |f| %>
       <div class="create-form-element">
-        <%= f.input :name, label: "List name 📋"%>
+        <%= f.input :name, label: "List name 📋", input_html: { maxlength: 12 } %>
         <%= f.input :description, as: :text, input_html: { maxlength: 280 }, label: "Description (Max. 280 Chars 🤓)" %>
         <%= f.input :places, as: :numeric, label: "Spots available 🏆" %>
         <%= f.input :prebookspot, as: :boolean %>

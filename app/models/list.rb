@@ -2,11 +2,12 @@ require 'date'
 
 class List < ApplicationRecord
   belongs_to :user
+  has_one :chatroom
   has_many :shotguns, dependent: :destroy
   has_many :listed_users, through: :shotguns, source: :user
 
-  validates :name, presence: true
-  validates :description, presence: true
+  validates :name, presence: true, length: { maximum: 12 }
+  validates :description, presence: true, length: { maximum: 280 }
   validates :places, presence: true
 
   scope :active, -> { where("start_time < ? AND end_time > ?", DateTime.now, DateTime.now) }

@@ -17,16 +17,16 @@
     <div class="card-container d-flex align-items-center justify-content-center flex-column">
       <div class="card-container-flexbox d-flex align-items-start justify-content-heavenly flex-column">
         <div class="card-title">
-          <h1><%= @list.name %></h1>
+          <h1><%= @list.name.titleize %></h1>
         </div>
         <div class="card-creator-name">
-          <p><span>Created by: </span><%= @list.user.email %></p>
+          <p><span>Created by: </span><%= @list.user.username.capitalize %></p>
         </div>
         <div class="card-creation-time">
           <p>Ends: <%=@list.end_time.strftime('%D at %R')%></p>
         </div>
         <div class="card-description">
-          <p><span>Description: </span><%= @list.description %></p>
+          <p><span>Description: </span><%= @list.description.capitalize %></p>
         </div>
         <div class="shotgunners-title">
           <h2>Shotgunners</h2>
@@ -35,9 +35,8 @@
           <%= render 'shared/shotgunners_left', list: @list %>
         </div>
         <div class="shotgunners-list">
-          <% @list.shotguns.each do |shotgun| %>
-            <p><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
-          <% end %>
+          <%# class winner et waitlist selon places => shared/winner %>
+          <%= render 'shared/winner' %>
         </div>
         <div class="bottom-sharing-link-container d-flex align-items-center justify-content-center w-100 mb-1">
           <div class="sharing-link-container d-flex align-items-center justify-content-center">
@@ -52,6 +51,34 @@
       </div>
     </div>
 </div>
-<div data-aos="fade-up-right" data-aos-delay="300">
+<div data-aos="fade-up-right" data-aos-delay="300" class="ced-btn-show">
   <%= check_shotgun_btn %>
 </div>
+
+<% if user_signed_in? %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'shared/chatrooms' %>
+        </div>
+        <div class="modal-footer">
+        <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+          <%= f.input :content, label: false %>
+          <%= f.submit %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
