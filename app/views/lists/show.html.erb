@@ -75,7 +75,6 @@
           <div class="messages" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
               <%# RENDER MESSAGES %>
-              <%# <%= render 'shared/chatrooms' %>
               <%= render "messages/message", message: message %>
             <% end %>
           </div>
