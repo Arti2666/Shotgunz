@@ -1,7 +1,7 @@
 class ShotgunsController < ApplicationController
   before_action :authenticate_user!, except: :create
 
-  def create
+  def create # rubocop:disable all
     @shotgun = Shotgun.new
     @shotgun.user = (current_user ? current_user : nil)
     @list = List.find(params[:list_id])

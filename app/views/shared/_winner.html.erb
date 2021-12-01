@@ -1,7 +1,8 @@
 <% @list.shotguns.first(@list.places).each do |shotgun| %>
   <p class="winner"><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
 <% end %>
-
-<% @list.shotguns.drop(@list.places).each do |shotgun| %>
-  <p class="waitlist"><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
+<% if @list.shotguns.count > @list.places %>
+  <% @list.shotguns.drop(@list.places).each do |shotgun| %>
+    <p class="waitlist"><i class="fas fa-arrow-right"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
+  <% end %>
 <% end %>

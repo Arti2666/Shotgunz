@@ -25,7 +25,7 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
-  def create
+  def create # rubocop:disable all
     @list = List.new(list_params)
     @list.user_id = current_user.id
     if @list.save
