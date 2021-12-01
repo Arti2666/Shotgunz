@@ -56,10 +56,13 @@
 </div>
 
 <% if user_signed_in? %>
-  <%# BUTTON TRIGGER MODAL %>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
+
+  <!-- Button trigger modal -->
+  <div class="chatroom-btn-access">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+  </div>
 
   <%# MODAL %>
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
