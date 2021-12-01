@@ -15,6 +15,9 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'rails_admin', '~> 2.0'
 gem 'blazer'
 
+#QR Code
+gem 'rqrcode'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # Use postgresql as the database for Active Record
