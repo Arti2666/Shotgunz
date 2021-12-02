@@ -9,7 +9,7 @@
 
 .alexis-marketplace-second {
   height: 100%;
-  // width: 90%;
+  width: 100%;
 }
 
 // LINK GENERAL
@@ -18,13 +18,15 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 // MENU
 
 .alexis-marketplace-menu {
   display: flex;
-
+  justify-content: center;
   .marketplace-menu-element {
     display: flex;
     align-items: center;
@@ -68,7 +70,7 @@
   overflow: scroll;
   height: 100%;
   position: fixed;
-
+  width: 100%;
   .lists {
     padding-bottom: 200px;
   }
@@ -87,6 +89,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+    position: relative;
   }
 
   a {
