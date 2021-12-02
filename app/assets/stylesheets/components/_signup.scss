@@ -62,3 +62,13 @@
     border-bottom: 1px solid white;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .alexis-login-bonus-btn {
+    flex-direction: column;
+    a {
+      margin: 0px;
+      text-align: center;
+    }
+  }
+}
