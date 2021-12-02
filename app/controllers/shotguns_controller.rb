@@ -6,7 +6,9 @@ class ShotgunsController < ApplicationController
     @shotgun.user = (current_user ? current_user : nil)
     @list = List.find(params[:list_id])
     @shotgun.list = @list
+    create_session_list
     if @shotgun.save
+      session[:list_ids] << @list.id
       session[:shotgun_id] = @shotgun.id
       if @shotgun.user_id.nil?
         BackCheck5MinJob.set(wait_until: 2.minutes.from_now).perform_later(@shotgun.id)
@@ -31,6 +33,14 @@ Sign Up to confirm it!
     @shotgun = Shotgun.find_by('user_id= ? AND list_id= ?', current_user.id, params[:id])
     if @shotgun.destroy
       redirect_to lists_path
+    end
+  end
+
+  private
+
+  def create_session_list
+    unless session[:list_ids].present?
+      session[:list_ids] = []
     end
   end
 end
