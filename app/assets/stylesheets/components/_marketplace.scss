@@ -156,7 +156,7 @@
 }
 
 .alexis-marketplace-container-create-btn {
-  background: linear-gradient(to top, #FD7B7B 65%, transparent);
+  background: linear-gradient(to top, #FD7B7B 20%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +186,7 @@
   }
 
   .alexis-marketplace-create-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
     box-shadow: 0px 0px 39px 7px rgba(255px, 86px, 242px, 0.8);
   }
 }
