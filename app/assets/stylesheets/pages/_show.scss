@@ -235,6 +235,7 @@
 
 }
 
+// CHATROOM BTN
 .chatroom-btn-access {
   margin-top: 20px;
   display: flex;
@@ -266,4 +267,22 @@
   i {
     color: white;
   }
+}
+
+// CHATROOM MESSAGES
+
+#staticBackdrop {
+  padding-right: 0px !important;
+}
+
+.modal-body {
+  .messages {
+    height: 240px;
+    overflow: scroll;
+  }
+}
+
+.modal-backdrop {
+  height: 100%;
+  width: 100%;
 }
