@@ -9,6 +9,8 @@ class List < ApplicationRecord
   validates :name, presence: true, length: { maximum: 12 }
   validates :description, presence: true, length: { maximum: 280 }
   validates :places, presence: true
+  validates :start_time, presence: true
+  validates :end_time, presence: true
 
   scope :active, -> { where("start_time < ? AND end_time > ?", DateTime.now, DateTime.now) }
   scope :public_lists, -> { where("public = true") }
