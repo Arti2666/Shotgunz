@@ -24,14 +24,14 @@
         <%= render "lists", lists: @shotguns %>
       </div>
     </div>
-
-    <div class="alexis-marketplace-container-create-btn">
-      <div class="alexis-marketplace-create-btn">
-        <%= link_to new_list_path do %>
-          <i class="fas fa-plus"></i>
-        <% end %>
-      </div>
+  </div>
+  <div class="alexis-marketplace-container-create-btn">
+    <div class="alexis-marketplace-create-btn">
+      <%= link_to new_list_path do %>
+        <div class="shotgun-cta">
+          <h3>Create new list</h3>
+        </div>
+      <% end %>
     </div>
-
   </div>
 </div>
