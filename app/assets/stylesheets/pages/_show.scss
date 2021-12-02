@@ -179,8 +179,11 @@
 
   // WINNER
   .shotgunners-list {
-    i {
+    i.winner {
       color: rgb(49, 218, 114);
+    }
+    i.waitlist {
+      color: rgb(218, 49, 215);
     }
   }
 
