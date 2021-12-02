@@ -276,6 +276,32 @@
   }
 }
 
+// CHATROOM DESIGN
+.modal-footer {
+
+  #message_content {
+    background: white;
+    color: black;
+    border-radius: 0px;
+    border: 1px solid #BA13AF;
+  }
+
+  #new_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  input {
+    background: #BA13AF;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+}
+
 // CHATROOM MESSAGES
 
 #staticBackdrop {

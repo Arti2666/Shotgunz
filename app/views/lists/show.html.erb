@@ -89,8 +89,8 @@
 
           <div class="modal-footer">
             <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-              <%= f.input :content, label: false %>
-              <%= f.submit %>
+              <%= f.input :content, label: false, placeholder: 'Type your message...' %>
+              <%= f.submit value: 'Send' %>
             <% end %>
           </div>
 
