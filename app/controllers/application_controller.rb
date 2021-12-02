@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
   devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || list_path(session[:list_ids].last)
+  end
+
   def default_url_options
     { host: ENV["DOMAIN"] || "www.shotgunz.net" }
   end

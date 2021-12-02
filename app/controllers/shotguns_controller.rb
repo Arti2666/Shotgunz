@@ -14,7 +14,7 @@ class ShotgunsController < ApplicationController
         BackCheck5MinJob.set(wait_until: 2.minutes.from_now).perform_later(@shotgun.id)
         flash[:success_modal] = <<-TEXT
 Your spot is booked
-for the next 5 minutes!
+for the next 2 minutes!
 ⏱😈
 Sign Up to confirm it!
 🚀
@@ -31,7 +31,11 @@ Sign Up to confirm it!
 
   def destroy
     @shotgun = Shotgun.find_by('user_id= ? AND list_id= ?', current_user.id, params[:id])
+    @list = List.find(params[:list_id])
     if @shotgun.destroy
+      if session[:list_ids].include?(@list.id)
+        session[:list_ids].delete(@list.id)
+      end
       redirect_to lists_path
     end
   end
