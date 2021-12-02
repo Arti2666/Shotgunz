@@ -2,7 +2,7 @@
   <div class="alexis-marketplace-card-element">
     <%= link_to "", list_path(list), class:"alexis-click"%>
     <div class="alexis-card-left-element">
-      <%= link_to list.name, list_path(list) %>
+      <%= link_to list.name.titleize, list_path(list) %>
       <% if list.shotguns.count == 0 %>
         <p><span><%= list.places %> shotguns available</span> out of <span><%= list.places %></span></p>
       <% elsif list.shotguns.count > 0 && list.shotguns.count < list.places %>
@@ -10,10 +10,10 @@
       <% else %>
         <p><span><%= list.shotguns.count%> / <%=list.places%></span> - Waiting List</p>
       <% end %>
-      <%= list.user.username %>
+      <%= list.user.username.capitalize %>
     </div>
     <div class="alexis-card-right-element">
-      <p><%=list.end_time.strftime('%D')%></p>
+      <p>Finishes <%=list.end_time.strftime('%A %-d %b')%></p>
       <div class="alexis-card-show-btn">
         <i class="fas fa-chevron-right"><%= link_to "", list_path(list), class:"alexis-market-show-btn" %></i>
       </div>
