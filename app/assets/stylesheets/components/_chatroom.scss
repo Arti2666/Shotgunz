@@ -34,3 +34,22 @@
 .modal-backdrop {
   z-index: -1;
 }
+
+// USER-MESSAGES
+.my-messages{
+  color: rgb(82, 190, 112);
+  font-weight: bolder;
+}
+
+p.my-messages{
+  color: rgb(52, 53, 53);
+  font-weight: bolder;
+}
+
+.other-messages{
+  color: rgb(47, 134, 255);
+}
+
+p.other-messages{
+  color: rgb(52, 53, 53);
+}
