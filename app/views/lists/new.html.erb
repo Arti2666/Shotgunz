@@ -42,7 +42,7 @@
         </div>
         <%= f.input :category, collection: List::CATEGORY %>
         <div class="alexis-submitbtn-create">
-          <%= f.submit data: { disable_with: false } %>
+          <%= f.submit id: "btn-create-list", data: { disable_with: false } %>
         </div>
       </div>
     <% end %>

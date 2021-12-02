@@ -23,12 +23,22 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 
 import { displayIndex } from "../display_index"
+import { btnCreateDisable } from "../btn_create_disable"
+import { btnShotDisable } from "../btn_shot_disable"
 
 document.addEventListener('turbolinks:load', () => {
   displayIndex();
 });
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener('turbolinks:load', () => {
+  btnCreateDisable();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  btnShotDisable();
+});
+
+document.addEventListener("turbolinks:load", function () {
   console.log("loaded")
   AOS.init({
     startEvent: 'load'
