@@ -10,7 +10,7 @@
       <% else %>
         <p><span><%= list.shotguns.count%> / <%=list.places%></span> - Waiting List</p>
       <% end %>
-      <%= list.user.email %>
+      <%= list.user.username %>
     </div>
     <div class="alexis-card-right-element">
       <p><%=list.end_time.strftime('%D')%></p>
