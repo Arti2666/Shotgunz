@@ -25,10 +25,10 @@
           <h1><%= @list.name.titleize %></h1>
         </div>
         <div class="card-creator-name">
-          <p><span>Created by: </span><%= @list.user.username.capitalize %></p>
+          <p>Created by: <span><%= @list.user.username.capitalize %></span></p>
         </div>
         <div class="card-creation-time">
-          <p>Ends: <%=@list.end_time.strftime('%D at %R')%></p>
+          <p>Finishes <%=@list.end_time.strftime('%A %-d %b at %R %p')%></p>
         </div>
         <div class="card-description">
           <p><span>Description: </span><%= @list.description.capitalize %></p>
