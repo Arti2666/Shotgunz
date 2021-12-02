@@ -1,7 +1,7 @@
 <div id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.username %></strong>
-    <i><%= message.created_at.in_time_zone("Europe/Paris").strftime("%a %b %e at %l:%M %p") %></i>
+    <strong class="<%= current_user.username == message.user.username ? "my-messages" : "other-messages" %>"><%= message.user.username %></strong>
+    <i><%= message.created_at.in_time_zone("Europe/Paris").strftime("%b %e at %l:%M %p") %></i>
   </small>
-  <p><%= message.content %></p>
+  <p class="<%= current_user.username == message.user.username ? "my-messages" : "other-messages" %>"><%= message.content %></p>
 </div>
