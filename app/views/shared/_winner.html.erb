@@ -1,10 +1,9 @@
 <% @list.shotguns.first(@list.places).each do |shotgun| %>
-  <p><i class="fas fa-arrow-right winner"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
+  <p><i class="fas fa-check winner"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
 <% end %>
 
 <% if @list.shotguns.count > @list.places %>
   <% @list.shotguns.drop(@list.places).each do |shotgun| %>
-    <p><i class="fas fa-arrow-right waitlist"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
-    <%# icone sablier fas fa-hourglass-half %>
+    <p><i class="fas fa-hourglass-half waitlist"></i>   <%= shotgun.user_id.nil? ? "Guest User" : shotgun.user.username %></p>
   <% end %>
 <% end %>
