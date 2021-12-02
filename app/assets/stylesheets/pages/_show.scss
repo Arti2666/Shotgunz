@@ -54,6 +54,13 @@
   text-decoration: none;
   }
 
+  .aos-init {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   // CARD CONTAINER
   .card-container {
     background: linear-gradient(to right, #010234, #3F1964);
