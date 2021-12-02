@@ -3,11 +3,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   add_flash_types :success_modal
 
-   def configure_permitted_parameters
-    # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+  def configure_permitted_parameters
+  # For additional fields in app/views/devise/registrations/new.html.erb
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
 
-    # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
-   end
+  # For additional in app/views/devise/registrations/edit.html.erb
+  devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+  end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "www.shotgunz.net" }
+  end
 end
