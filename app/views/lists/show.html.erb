@@ -1,3 +1,8 @@
+<!-- Meta tags for lists -->
+<% content_for :meta_title, "#{@list.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @list.description %>
+
+
 <div class="list-show d-flex align-items-center justify-content-center flex-column">
   <div data-aos="fade-up-left" data-aos-delay="300">
     <div class="top-container d-flex align-items-center w-85 mb-3">
