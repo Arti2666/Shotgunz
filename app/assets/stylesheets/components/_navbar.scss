@@ -3,6 +3,9 @@
   height: 9vh;
   width: 95% ;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tanki-navbar-container {
@@ -79,4 +82,36 @@
   -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: white;
   margin-top: 3px;
+}
+
+@media screen and (max-width: 350px) {
+  .dropdown {
+    button {
+      height: 33px;
+      width: 23px;
+      padding: 5px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .login-btn-design {
+    height: 28px;
+    width: 20px;
+    font-size: 0.8rem;
+    font-weight: 900;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .dropdown {
+    button {
+      padding: 8px 18px !important
+    }
+  }
+
+  .shotgun-logo-navbar h3 {
+    font-size: 32px;
+  }
 }
