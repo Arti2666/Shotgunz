@@ -33,8 +33,8 @@ Sign Up to confirm it!
     @shotgun = Shotgun.find_by('user_id= ? AND list_id= ?', current_user.id, params[:id])
     @list = List.find(params[:list_id])
     if @shotgun.destroy
-      if session[:list_ids].include?(@list.id)
-        session[:list_ids].delete(@list.id)
+      if session[:list_ids]&.include?(@list.id)
+        session[:list_ids]&.delete(@list.id)
       end
       redirect_to lists_path
     end
