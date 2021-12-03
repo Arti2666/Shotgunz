@@ -296,6 +296,10 @@
 
 // CHATROOM DESIGN
 .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   #message_content {
     background: white;
