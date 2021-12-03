@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if session[:list_id].present?
+    if session[:list_ids].present?
       stored_location_for(resource) || list_path(session[:list_ids].last)
     else
       stored_location_for(resource) || lists_index_path
