@@ -10,4 +10,7 @@ class PagesController < ApplicationController
       shape_rendering: 'crispEdges',
       standalone: true  ) #QR Code transformation to image
   end
+
+  def questions
+  end
 end
