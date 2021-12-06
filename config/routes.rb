@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'lists/index'
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
 
+  get '/FAQs', to: 'pages#questions', as: 'questions'
+
   resources :lists, only: %I[index show new create destroy] do
     resources :shotguns, only: %I[create destroy]
   end
