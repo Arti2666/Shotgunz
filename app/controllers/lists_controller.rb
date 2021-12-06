@@ -17,7 +17,10 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     # && list.chatroom a delete apres clean db
-    if user_signed_in? && @list.chatroom
+    if DateTime.now.in_time_zone("Europe/London") > (@list.end_time - 1.hours) && @list.shotguns.first(@list.places).any? { |shot| shot.user_id == current_user.id }
+      @chatroom = @list.chatroom
+      @message = Message.new(user_id: current_user.id, chatroom_id: @chatroom.id)
+    elsif DateTime.now.in_time_zone("Europe/London") < (@list.end_time - 1.hours) && @list.shotguns.any? { |shot| shot.user_id == current_user.id }
       @chatroom = @list.chatroom
       @message = Message.new(user_id: current_user.id, chatroom_id: @chatroom.id)
     end
@@ -57,8 +60,10 @@ class ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    if @list.destroy
-      redirect_to lists_path
+    if @list.user == current_user
+      if @list.destroy
+        redirect_to lists_path
+      end
     end
   end
 

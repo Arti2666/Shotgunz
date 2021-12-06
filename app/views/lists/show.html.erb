@@ -62,40 +62,14 @@
 
 
 <%# CHAT NON DISPO SI UNLOG && CHAT ACTIF SI SHOTGUN %>
-<% if !current_user.nil? && @list.shotguns.any? { |shot| shot.user_id == current_user.id } %>
-
-  <%# BUTTON TRIGGER MODAL %>
-    <div class="chatroom-btn-access">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      <i class="fas fa-comment-dots"></i>
-      </button>
-    </div>
-
-  <%# MODAL %>
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"><%=@list.name%></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="messages" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-            <% @chatroom.messages.each do |message| %>
-              <%# RENDER MESSAGES %>
-              <%= render "messages/message", message: message %>
-            <% end %>
-          </div>
-
-          <div class="modal-footer">
-            <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-              <%= f.input :content, label: false, placeholder: 'Type your message...' %>
-              <%= f.submit value: 'Send' %>
-            <% end %>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- If current time is inferior to end time -> The list is shotgunnable -->
+<% if DateTime.now < (@list.end_time - 1.hours) %>
+  <!-- Is user part of the shotgunners -->
+  <% if !current_user.nil? && @list.shotguns.any? { |shot| shot.user_id == current_user.id } %>
+    <%= render "chatlist" %>
+  <% end %>
+<%# if current time is superior to list end time -> The list is closed & the user is a winner %>
+<% elsif DateTime.now > (@list.end_time - 1.hours) && @list.shotguns.first(@list.places).any? { |shot| shot.user_id == current_user.id }%>
+<%# BUTTON TRIGGER MODAL %>
+    <%= render "chatlist" %>
 <% end %>
