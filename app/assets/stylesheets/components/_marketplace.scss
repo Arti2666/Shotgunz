@@ -205,6 +205,9 @@
 
 .div-my-shot {
   width: 96.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 340px) {
