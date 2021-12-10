@@ -1,4 +1,4 @@
-Shotgunz.net is a firt come first srived platform to organise with friends! 
+Shotgunz.net is a firt come first served platform to organise with friends! 
 
 The project is open-source and welcome to modifications!
 
